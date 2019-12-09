@@ -1,10 +1,14 @@
 package dad.javafx.micv.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+@XmlType
 public class Contacto {
 	
 	private ListProperty<Telefono> telefonos = new SimpleListProperty<Telefono>(FXCollections.observableArrayList());
@@ -14,7 +18,7 @@ public class Contacto {
 	public final ListProperty<Telefono> telefonosProperty() {
 		return this.telefonos;
 	}
-	
+	@XmlElement
 	public final ObservableList<Telefono> getTelefonos() {
 		return this.telefonosProperty().get();
 	}
@@ -26,7 +30,7 @@ public class Contacto {
 	public final ListProperty<Email> emailsProperty() {
 		return this.emails;
 	}
-	
+	@XmlElement
 	public final ObservableList<Email> getEmails() {
 		return this.emailsProperty().get();
 	}
@@ -38,7 +42,7 @@ public class Contacto {
 	public final ListProperty<Web> websProperty() {
 		return this.webs;
 	}
-	
+	@XmlElement
 	public final ObservableList<Web> getWebs() {
 		return this.websProperty().get();
 	}

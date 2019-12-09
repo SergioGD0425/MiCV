@@ -1,8 +1,13 @@
 package dad.javafx.micv.model;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
+@XmlType
 public class Nacionalidad {
 	
 	private StringProperty nacionalidad = new SimpleStringProperty();
@@ -11,7 +16,7 @@ public class Nacionalidad {
 		return this.nacionalidad;
 	}
 	
-
+	@XmlAttribute
 	public final String getNacionalidad() {
 		return this.nacionalidadProperty().get();
 	}

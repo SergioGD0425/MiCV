@@ -2,6 +2,11 @@ package dad.javafx.micv.model;
 
 import java.time.LocalDate;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import dad.javafx.utils.LocalDateAdapter;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -18,6 +23,8 @@ public class Experiencia {
 		return this.desde;
 	}
 	
+	@XmlAttribute
+	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	public final LocalDate getDesde() {
 		return this.desdeProperty().get();
 	}
@@ -30,6 +37,8 @@ public class Experiencia {
 		return this.hasta;
 	}
 	
+	@XmlAttribute
+	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	public final LocalDate getHasta() {
 		return this.hastaProperty().get();
 	}
@@ -42,7 +51,7 @@ public class Experiencia {
 		return this.denominacion;
 	}
 	
-
+	@XmlElement
 	public final String getDenominacion() {
 		return this.denominacionProperty().get();
 	}
@@ -57,7 +66,7 @@ public class Experiencia {
 		return this.empleador;
 	}
 	
-
+	@XmlElement
 	public final String getEmpleador() {
 		return this.empleadorProperty().get();
 	}
